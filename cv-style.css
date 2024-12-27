@@ -53,6 +53,23 @@ a:hover {
     text-align: center; /* Center the icon within its space */
 }
 
+#contact-info .location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #007bff; /* Match the font color */
+}
+
+#contact-info .location i {
+    color: #007bff; /* Match the icon color */
+    width: 1.3em; /* Ensure consistent icon size */
+    font-size: 1.3em; /* Adjust icon size */
+    text-align: center; /* Center the icon within its space */
+}
+
 /* Basic styling for section headings with icons */
 h2 {
     display: flex;
