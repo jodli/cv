@@ -242,7 +242,7 @@ h2::after {
 /* Skills */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
     border: 1px solid var(--color-border);
 }
@@ -253,7 +253,7 @@ h2::after {
     border-bottom: 1px solid var(--color-border);
 }
 
-.skill-group:nth-child(5n) {
+.skill-group:nth-child(4n) {
     border-right: none;
 }
 
