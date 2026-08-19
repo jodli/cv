@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan-Olaf Becker — Software Architect</title>
-    <!-- <link rel="stylesheet" href="theme-terminal.css"> -->
+    <title>Jan-Olaf Becker — Hands-on Architect</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="theme-swiss.css">
-    <!-- <link rel="stylesheet" href="cv-style.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="page">
         <header>
             <div class="header-content">
                 <h1>Jan-Olaf Becker</h1>
-                <p class="tagline">Software Architect · AI Product Features · Legacy Modernization</p>
+                <p class="tagline">Hands-on Architect · AI Systems · Legacy Modernization</p>
             </div>
             <nav class="contact">
                 <a href="mailto:jobst87@gmail.com">jobst87@gmail.com</a>
@@ -30,7 +29,7 @@
         </header>
 
         <section class="summary">
-            <p>Software architect with 10+ years in infrastructure monitoring and medical device software. I take apart large legacy systems and put them back together in modular form. Currently integrating AI into a mature product — not a startup experiment, but production features for 40k+ users: an AI assistant that helps operators cut through alert noise, find root causes, and fix issues in their IT infrastructure.</p>
+            <p>Engineer and architect, 11 years in infrastructure monitoring and medical device software. I design systems and then build them. Seven years on PRTG, a monitoring product with 40k+ customers: first components, then breaking up the Delphi monolith, now the platform its AI features run on. On-prem, licensed, sometimes air-gapped.</p>
         </section>
 
         <section class="experience">
@@ -43,10 +42,12 @@
                     <p class="company">Paessler GmbH</p>
                 </div>
                 <ul>
-                    <li>Designing AI features for PRTG Network Monitor (40k+ users): AI assistant with agent capabilities, RAG over documentation, local-first deployment</li>
-                    <li>Architecting a modular AI system with clear boundaries between core, agents, tools, and connectors</li>
-                    <li>Translating network monitoring domain knowledge into safe, production-grade agent behaviors</li>
-                    <li>Building prompt evaluation suites and scenario tests — every feature is eval-tested before it ships</li>
+                    <li>Built the platform PRTG's AI features run on, hands-on with 6 engineers</li>
+                    <li>Designed the runtime on the customer machine: its own service, integrated through the existing API layer, the multi-million-line Delphi core untouched</li>
+                    <li>Built the cloud gateway all inference goes through: machine identity per install, license entitlement, spend and rate caps, swappable provider</li>
+                    <li>Added distribution, observability, evals and e2e tests, so a feature team can ship on it</li>
+                    <li>Shipped the first feature, AI alarm analysis, four months after project start: prototype to early access customers with product management, then the real feature built from their feedback</li>
+                    <li>Designing the operating side: a safety envelope for agents acting on live infrastructure (graded autonomy, approval gates, blast-radius limits, audit, the user's own permissions), and a control plane for prompt delivery so behavior changes without a release</li>
                 </ul>
             </article>
 
@@ -57,10 +58,10 @@
                     <p class="company">Paessler GmbH</p>
                 </div>
                 <ul>
-                    <li>Introduced RFC/ADR process for documenting technical decisions across teams</li>
-                    <li>Defined technical vision and long-term roadmap for key system components</li>
-                    <li>Established architectural guidelines while preserving developer autonomy</li>
-                    <li>Led architecture for migrating PRTG's multi-million line Delphi monolith into modern services using strangler fig pattern</li>
+                    <li>Led the architecture for breaking up PRTG's Delphi monolith with the strangler fig pattern. Around 15 components over 3 years, without pausing releases</li>
+                    <li>Designed a new cross-platform remote probe: sensors run on Linux and ARM64, not just Windows</li>
+                    <li>Introduced the RFC/ADR process for technical decisions. Now used by 7 teams, 30 people</li>
+                    <li>Owned technical vision and roadmap for core components</li>
                 </ul>
             </article>
 
@@ -71,9 +72,8 @@
                     <p class="company">Paessler AG</p>
                 </div>
                 <ul>
-                    <li>Built new components in C++ and Rust, integrating them into the legacy system</li>
-                    <li>Introduced TDD practices for new projects</li>
-                    <li>Established and maintained GitLab CI/CD pipelines with Docker</li>
+                    <li>Built new cross-platform components in C++ and Rust, integrated into the legacy system</li>
+                    <li>Introduced TDD, set up the GitLab CI/CD pipelines with Docker</li>
                 </ul>
             </article>
 
@@ -84,9 +84,8 @@
                     <p class="company">Infoteam Software AG</p>
                 </div>
                 <ul>
-                    <li>Authored software documentation per IEC 62304 standards for medical device compliance</li>
-                    <li>Facilitated customer workshops for requirements gathering and system architecture definition</li>
-                    <li>Designed software solutions meeting medical device regulatory requirements</li>
+                    <li>Wrote the software documentation to IEC 62304 for medical device approval</li>
+                    <li>Ran customer workshops for requirements and system architecture</li>
                 </ul>
             </article>
 
@@ -97,8 +96,8 @@
                     <p class="company">Infoteam Software AG</p>
                 </div>
                 <ul>
-                    <li>Developed C# applications for the medical devices industry</li>
-                    <li>Introduced CI/CD practices for software components</li>
+                    <li>Built C# applications for medical device customers</li>
+                    <li>Introduced CI/CD for software components</li>
                 </ul>
             </article>
         </section>
@@ -111,12 +110,16 @@
                     <p>Rust · C++ · C# · Python · TypeScript</p>
                 </div>
                 <div class="skill-group">
+                    <h4>AI Systems</h4>
+                    <p>LLM integration · Agents and tool calling · RAG · MCP · Evals · On-prem and air-gapped deployment</p>
+                </div>
+                <div class="skill-group">
                     <h4>Architecture</h4>
-                    <p>Legacy modernization · AI system design · Agent architectures · Harness engineering · API design · Domain-driven design</p>
+                    <p>Legacy modernization (strangler fig) · Cross-platform systems · Domain-driven design · API and protocol design · Auth and licensing</p>
                 </div>
                 <div class="skill-group">
                     <h4>Practices</h4>
-                    <p>TDD · RFC/ADR processes · Eval-driven development · Agentic coding · CI/CD · Technical documentation</p>
+                    <p>TDD · RFC/ADR · CI/CD · Technical writing</p>
                 </div>
                 <div class="skill-group">
                     <h4>Spoken</h4>
@@ -153,12 +156,8 @@
 
         <section class="interests">
             <h2><span class="section-num">04</span> Beyond Work</h2>
-            <p>Hiking with family · Playing trumpet in ensembles · Modding games (e.g. Minecraft / Factorio) · Home lab / automation tinkering · Burning through my side project backlog with agentic coding</p>
+            <p>Hiking with family · Trumpet in ensembles · Modding games (Minecraft, Factorio) · Home lab tinkering · Side projects with agentic coding</p>
         </section>
-
-        <footer>
-            <p>Last updated May 2026</p>
-        </footer>
     </div>
 </body>
 </html>

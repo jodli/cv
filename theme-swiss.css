@@ -5,8 +5,6 @@
    asymmetric layouts, red accent. Brutalist clarity meets Swiss precision.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
-
 :root {
     --color-bg: #ffffff;
     --color-surface: #ffffff;
@@ -257,7 +255,10 @@ h2::after {
     border-right: none;
 }
 
-.skill-group:nth-last-child(-n+5) {
+/* Last group spans the full width as a bottom band */
+.skill-group:last-child {
+    grid-column: 1 / -1;
+    border-right: none;
     border-bottom: none;
 }
 
@@ -311,29 +312,14 @@ h2::after {
     padding-left: calc(28px + var(--space-md));
 }
 
-/* Footer */
-footer {
-    margin-top: var(--space-xl);
-    padding-top: var(--space-lg);
-    border-top: 3px solid var(--color-border);
-    display: flex;
-    justify-content: flex-end;
-}
-
-footer p {
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
 /* Print */
 @media print {
     body { padding: 0; }
     .page { border: none; padding: 0.75in; }
     .role, .edu-item, .skill-group { break-inside: avoid; }
     h2 { break-after: avoid; }
-    .section-num {
+    /* Keep the accent blocks and edu backgrounds in the PDF export */
+    * {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
