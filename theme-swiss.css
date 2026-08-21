@@ -27,6 +27,9 @@
 
     --page-max-width: 850px;
     --page-padding: 3rem;
+
+    /* Size of the numbered section chip; content aligns to it */
+    --num-size: 28px;
 }
 
 *, *::before, *::after {
@@ -135,8 +138,8 @@ h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: var(--num-size);
+    height: var(--num-size);
     background: var(--color-accent);
     color: white;
     font-size: 0.7rem;
@@ -150,7 +153,7 @@ h2::after {
 /* Summary */
 .summary {
     margin-bottom: var(--space-2xl);
-    padding-left: calc(28px + var(--space-md));
+    padding-left: calc(var(--num-size) + var(--space-md));
 }
 
 .summary p {
@@ -314,7 +317,7 @@ h2::after {
 /* Projects */
 .projects ul {
     list-style: none;
-    padding-left: calc(28px + var(--space-md));
+    padding-left: calc(var(--num-size) + var(--space-md));
 }
 
 .projects li {
@@ -349,15 +352,84 @@ h2::after {
 .interests p {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
-    padding-left: calc(28px + var(--space-md));
+    padding-left: calc(var(--num-size) + var(--space-md));
 }
 
-/* Print */
+/* Print
+   Same layout as screen, tightened for paper. The responsive block below is
+   scoped to `screen` on purpose: a printed page is only ~690px wide (A4 minus
+   margins), so an unscoped max-width query would hit the PDF as well. */
 @media print {
+    @page {
+        size: A4;
+        margin: 12mm 14mm;
+    }
+
+    :root {
+        --space-lg: 0.8rem;
+        --space-xl: 1.1rem;
+        --space-2xl: 1.4rem;
+        --num-size: 22px;
+    }
+
+    /* Scales every rem-based size and gap down in one go */
+    html { font-size: 10.5pt; }
     body { padding: 0; }
-    .page { border: none; padding: 0.75in; }
+    .page { max-width: none; padding: 0; border: none; }
+
+    /* No poster-sized name on paper */
+    header {
+        margin-bottom: var(--space-lg);
+        padding-bottom: var(--space-md);
+        border-bottom-width: 2px;
+    }
+    header h1 { font-size: 2.2rem; }
+    .tagline { font-size: 0.85rem; }
+
+    /* One line instead of a four-line stack next to the name */
+    .contact {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+        gap: var(--space-xs) var(--space-sm);
+        font-size: 0.75rem;
+    }
+    .contact .separator { display: inline; color: var(--color-text-muted); }
+    .contact a { border-bottom: none; }
+
+    .summary { margin-bottom: var(--space-lg); }
+    .summary p { font-size: 0.95rem; line-height: 1.5; max-width: none; }
+
+    section { margin-bottom: var(--space-lg); }
+    h2 { margin-bottom: var(--space-sm); }
+
+    /* Experience: keep the date column, drop the dead space around it */
+    .experience .role {
+        grid-template-columns: 135px 1fr;
+        column-gap: var(--space-md);
+        row-gap: 0;
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+    .role .meta { font-size: 0.72rem; padding-top: 0.15rem; }
+    .role-title h3 { font-size: 1.05rem; }
+    .role-title .company { font-size: 0.85rem; }
+    .role ul { margin-top: 0.3rem; }
+    .role li { font-size: 0.82rem; line-height: 1.4; margin-bottom: 0.3rem; }
+
+    .skill-group { padding: var(--space-sm) var(--space-md); }
+    .skill-group p, .projects li, .interests p { font-size: 0.8rem; line-height: 1.4; }
+    .edu-item { padding: var(--space-sm) var(--space-md); }
+    .edu-title { font-size: 0.78rem; }
+    .edu-meta { font-size: 0.7rem; }
+
+    /* Page breaks: never split a block, never leave a heading alone */
     .role, .edu-item, .skill-group, .projects li { break-inside: avoid; }
+    .skills, .education, .projects, .interests { break-inside: avoid; }
     h2 { break-after: avoid; }
+    p, li { orphans: 2; widows: 2; }
+
     /* Keep the accent blocks and edu backgrounds in the PDF export */
     * {
         print-color-adjust: exact;
@@ -365,8 +437,8 @@ h2::after {
     }
 }
 
-/* Responsive */
-@media (max-width: 700px) {
+/* Responsive — screen only, see the print block above */
+@media screen and (max-width: 700px) {
     body { padding: var(--space-md); }
     .page { padding: var(--space-lg); }
     header {
@@ -381,11 +453,12 @@ h2::after {
         gap: var(--space-sm);
     }
     .contact .separator { display: inline; }
-    .experience .role {
-        grid-template-columns: 1fr;
-        gap: var(--space-sm);
-    }
-    .role ul { grid-column: 1; }
+    /* Plain flow instead of the grid: date, title, bullets. Keeping the grid
+       here put .role-title into an implicit second column and squeezed the
+       bullets into a sliver. */
+    .experience .role { display: block; }
+    .role .meta { margin-bottom: var(--space-xs); padding-top: 0; }
+    .role ul { margin-top: var(--space-sm); }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .skill-group:nth-child(2n) { border-right: none; }
     .skill-group:nth-child(-n+2) { border-bottom: 1px solid var(--color-border); }
