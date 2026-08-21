@@ -29,7 +29,7 @@
         </header>
 
         <section class="summary">
-            <p>Engineer and architect, 11 years in infrastructure monitoring and medical device software. I design systems and then build them. Seven years on PRTG, a monitoring product with 40k+ customers: first components, then breaking up the Delphi monolith, now the platform its AI features run on. On-prem, licensed, sometimes air-gapped.</p>
+            <p>Engineer and architect, 11 years in infrastructure monitoring and medical device software. I design systems and then build them. Seven years on PRTG, a monitoring product with more than 40,000 customers. I started with single components, then worked on splitting the Delphi monolith, and now build the platform for its AI features. The product is installed on-premises, licensed, and sometimes runs air-gapped.</p>
         </section>
 
         <section class="experience">
@@ -42,12 +42,11 @@
                     <p class="company">Paessler GmbH</p>
                 </div>
                 <ul>
-                    <li>Built the platform PRTG's AI features run on, hands-on with 6 engineers</li>
-                    <li>Designed the runtime on the customer machine: its own service, integrated through the existing API layer, the multi-million-line Delphi core untouched</li>
-                    <li>Built the cloud gateway all inference goes through: machine identity per install, license entitlement, spend and rate caps, swappable provider</li>
-                    <li>Added distribution, observability, evals and e2e tests, so a feature team can ship on it</li>
-                    <li>Shipped the first feature, AI alarm analysis, four months after project start: prototype to early access customers with product management, then the real feature built from their feedback</li>
-                    <li>Designing the operating side: a safety envelope for agents acting on live infrastructure (graded autonomy, approval gates, blast-radius limits, audit, the user's own permissions), and a control plane for prompt delivery so behavior changes without a release</li>
+                    <li>Built the runtime for the AI features together with 6 engineers. It runs on the customer's machine, next to the existing product</li>
+                    <li>All model calls go through a cloud gateway we built. It does license checks, cost and rate limits, and lets us switch the provider</li>
+                    <li>Shipped the first AI feature four months after the project started. We tested a prototype with a few customers and built the final feature from their feedback</li>
+                    <li>Defined what agents are allowed to do on their own on live infrastructure. Critical actions need approval, every action has a limited scope, and everything is logged</li>
+                    <li>Prompts and tool definitions are deployed separately from the product, so we can correct them without a new release</li>
                 </ul>
             </article>
 
@@ -58,10 +57,10 @@
                     <p class="company">Paessler GmbH</p>
                 </div>
                 <ul>
-                    <li>Led the architecture for breaking up PRTG's Delphi monolith with the strangler fig pattern. Around 15 components over 3 years, without pausing releases</li>
-                    <li>Designed a new cross-platform remote probe: sensors run on Linux and ARM64, not just Windows</li>
-                    <li>Introduced the RFC/ADR process for technical decisions. Now used by 7 teams, 30 people</li>
-                    <li>Owned technical vision and roadmap for core components</li>
+                    <li>Designed a server that makes monitoring data available to industrial control systems over OPC UA. Written in Rust, cross-platform, nine months to release</li>
+                    <li>Shipped a new data collector for Linux and ARM64 in addition to Windows, with a C++ SDK for the teams building on it</li>
+                    <li>Introduced the RFC/ADR process for technical decisions that 7 teams with 30 people use it</li>
+                    <li>Handed four architecture initiatives to engineers and coached them in the stakeholder work</li>
                 </ul>
             </article>
 
@@ -72,32 +71,22 @@
                     <p class="company">Paessler AG</p>
                 </div>
                 <ul>
-                    <li>Built new cross-platform components in C++ and Rust, integrated into the legacy system</li>
-                    <li>Introduced TDD, set up the GitLab CI/CD pipelines with Docker</li>
+                    <li>Wrote the first cross-platform components in C++ and Rust for the Delphi product, and the interfaces to integrate them</li>
+                    <li>Led the OAuth 2.0 migration for mail monitoring across 4 teams</li>
+                    <li>Introduced TDD and built the GitLab CI/CD pipelines with Docker</li>
                 </ul>
             </article>
 
             <article class="role">
-                <p class="meta">April 2018 — March 2019 · Bubenreuth</p>
+                <p class="meta">April 2015 — March 2019 · Bubenreuth</p>
                 <div class="role-title">
-                    <h3>Software Architect — Medical Devices</h3>
+                    <h3>Software Engineer, then Architect — Medical Devices</h3>
                     <p class="company">Infoteam Software AG</p>
                 </div>
                 <ul>
-                    <li>Wrote the software documentation to IEC 62304 for medical device approval</li>
-                    <li>Ran customer workshops for requirements and system architecture</li>
-                </ul>
-            </article>
-
-            <article class="role">
-                <p class="meta">April 2015 — March 2018 · Bubenreuth</p>
-                <div class="role-title">
-                    <h3>Software Engineer</h3>
-                    <p class="company">Infoteam Software AG</p>
-                </div>
-                <ul>
-                    <li>Built C# applications for medical device customers</li>
-                    <li>Introduced CI/CD for software components</li>
+                    <li>Built C# applications for medical device manufacturers and wrote the IEC 62304 documentation required for approval</li>
+                    <li>Ran workshops with customers for requirements and system architecture</li>
+                    <li>Moved from engineer to architect and took over the system architecture in 10 customer projects</li>
                 </ul>
             </article>
         </section>
@@ -107,15 +96,15 @@
             <div class="skills-grid">
                 <div class="skill-group">
                     <h4>Languages</h4>
-                    <p>Rust · C++ · C# · Python · TypeScript</p>
+                    <p>Rust · C++ · C# · Python</p>
                 </div>
                 <div class="skill-group">
                     <h4>AI Systems</h4>
-                    <p>LLM integration · Agents and tool calling · RAG · MCP · Evals · On-prem and air-gapped deployment</p>
+                    <p>LLM integration · Agents and tool calling · RAG · MCP · Evals · On-prem deployment</p>
                 </div>
                 <div class="skill-group">
                     <h4>Architecture</h4>
-                    <p>Legacy modernization (strangler fig) · Cross-platform systems · Domain-driven design · API and protocol design · Auth and licensing</p>
+                    <p>Legacy modernization (strangler fig) · Cross-platform systems · Event-driven and message-bus · Domain-driven design · API and protocol design</p>
                 </div>
                 <div class="skill-group">
                     <h4>Practices</h4>
@@ -136,6 +125,10 @@
                     <p class="edu-meta">iSAQB · 2023</p>
                 </div>
                 <div class="edu-item">
+                    <p class="edu-title">Leading Without Line Authority</p>
+                    <p class="edu-meta">2022</p>
+                </div>
+                <div class="edu-item">
                     <p class="edu-title">Certified Professional for Medical Software</p>
                     <p class="edu-meta">2016</p>
                 </div>
@@ -145,18 +138,28 @@
                 </div>
                 <div class="edu-item">
                     <p class="edu-title">B.Eng. Computer Science</p>
-                    <p class="edu-meta">OTH Amberg-Weiden · 2012 — 2015</p>
+                    <p class="edu-meta">OTH Amberg-Weiden · 2012 - 2015</p>
                 </div>
                 <div class="edu-item">
                     <p class="edu-title">Automation Engineer Technology</p>
-                    <p class="edu-meta">Siemens Technik Akademie · 2010 — 2012</p>
+                    <p class="edu-meta">Siemens Technik Akademie · 2010 - 2012</p>
                 </div>
             </div>
         </section>
 
+        <section class="projects">
+            <h2><span class="section-num">04</span> Projects &amp; Writing</h2>
+            <ul>
+                <li><strong>crew-code</strong>: open-source CLI for running teams of AI coding agents. Reverse-engineered an undocumented protocol and covered it with compatibility tests. TypeScript, 157 tests. <a href="https://github.com/jodli/crew-code" target="_blank" rel="noopener">github.com/jodli/crew-code</a></li>
+                <li><strong>Creative Mod</strong>: maintain a Factorio community mod with 127k downloads. Kept it working from engine version 0.17 to 2.1. <a href="https://mods.factorio.com/mod/creative-mod" target="_blank" rel="noopener">mods.factorio.com/mod/creative-mod</a></li>
+                <li><strong>Coffee Shot Timer</strong>: espresso logging app on Google Play. Kotlin, offline-first, CI/CD to internal, beta and production tracks. <a href="https://play.google.com/store/apps/details?id=com.jodli.coffeeshottimer" target="_blank" rel="noopener">Google Play</a></li>
+                <li><strong>Blog</strong>: writing on AI-assisted development and legacy modernization. <a href="https://jodli.github.io/blog/" target="_blank" rel="noopener">jodli.github.io/blog</a></li>
+            </ul>
+        </section>
+
         <section class="interests">
-            <h2><span class="section-num">04</span> Beyond Work</h2>
-            <p>Hiking with family · Trumpet in ensembles · Modding games (Minecraft, Factorio) · Home lab tinkering · Side projects with agentic coding</p>
+            <h2><span class="section-num">05</span> Beyond Work</h2>
+            <p>Hiking with family · Trumpet in ensembles · Home lab tinkering</p>
         </section>
     </div>
 </body>

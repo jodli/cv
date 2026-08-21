@@ -305,6 +305,40 @@ h2::after {
     color: var(--color-text-muted);
 }
 
+/* Projects */
+.projects ul {
+    list-style: none;
+    padding-left: calc(28px + var(--space-md));
+}
+
+.projects li {
+    position: relative;
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.projects li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.projects strong {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.projects a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-accent);
+}
+
 /* Interests */
 .interests p {
     font-size: 0.9rem;
@@ -316,7 +350,7 @@ h2::after {
 @media print {
     body { padding: 0; }
     .page { border: none; padding: 0.75in; }
-    .role, .edu-item, .skill-group { break-inside: avoid; }
+    .role, .edu-item, .skill-group, .projects li { break-inside: avoid; }
     h2 { break-after: avoid; }
     /* Keep the accent blocks and edu backgrounds in the PDF export */
     * {
@@ -348,5 +382,5 @@ h2::after {
     .role ul { grid-column: 1; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .skill-group:nth-child(2n) { border-right: none; }
-    .summary, .interests p { padding-left: 0; }
+    .summary, .interests p, .projects ul { padding-left: 0; }
 }
